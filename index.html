@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alpha Gym: A academia premium com treinos personalizados, equipamentos modernos e resultados rápidos. Agende sua aula experimental hoje mesmo!">
+    <title>Alpha Gym | Transforme Seu Corpo em 8 Semanas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/gymfavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Slideshow -->
+    <div id="slideshow" class="slideshow-container">
+        <div class="slide active" style="background-image: url('./assets/imgacademia.jpg')">
+            <div class="slide-overlay">+50 EQUIPAMENTOS MODERNOS</div>
+        </div>
+        <div class="slide" style="background-image: url('./assets/imagemacademia2.jpg')">
+            <div class="slide-overlay">PERSONAL TRAINERS CERTIFICADOS</div>
+        </div>
+        <div class="slide" style="background-image: url('./assets/imagemacademia3.jpg')">
+            <div class="slide-overlay">AULAS COLETIVAS DIÁRIAS</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="menu-content">
+            <h1 class="logo">
+                <i class="fa-solid fa-dumbbell"></i> Alpha Gym
+            </h1>
+            <nav class="header-menu">
+                <ul class="list-itens">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#benefits">Benefícios</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.instagram.com/#" target="_blank" class="instagram-icon"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="main-content">
+            <div class="offer-banner">
+                ⏰ PROMOÇÃO: Matrícula grátis até <span id="countdown">31/12</span>!
+            </div>
+            <h1 class="primary-text">Transforme seu corpo em <span>8 semanas</span></h1>
+            <h2 class="second-text">COM PLANOS A PARTIR DE R$99/mês</h2>
+            <div class="btns">
+                <button class="btn-exp" onclick="document.getElementById('modal-form').style.display='flex'">Agendar aula experimental</button>
+                <button class="btn-personal" onclick="window.open('https://wa.me/5511999999999')">Falar com Personal</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção de Benefícios -->
+    <section id="benefits" class="benefits-section">
+        <h2>Por que escolher a <span>Alpha Gym</span>?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fa-solid fa-dumbbell"></i>
+                <h3>Equipamentos Premium</h3>
+                <p>Máquinas Life Fitness e Hammer Strength</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <h3>Aulas Diárias</h3>
+                <p>CrossFit, Muay Thai, Dança e mais</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-solid fa-trophy"></i>
+                <h3>Resultados Garantidos</h3>
+                <p>+100 alunos transformados em 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="testimonials" class="testimonials-section">
+        <h2>O que nossos alunos dizem:</h2>
+        <div class="testimonial-card">
+            <img src="./assets/avaliação.png" alt="Cliente satisfeito">
+            <p>"Perdi 12kg em 3 meses com os treinos personalizados!"</p>
+            <span>- João, 28 anos</span>
+        </div>
+    </section>
+
+    <!-- Formulário (Modal) -->
+    <div id="modal-form" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="document.getElementById('modal-form').style.display='none'">&times;</span>
+            <h2>Agende sua aula experimental!</h2>
+            <form>
+                <input type="text" placeholder="Seu nome" required>
+                <input type="tel" placeholder="WhatsApp" required>
+                <input type="email" placeholder="E-mail">
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3><i class="fa-solid fa-location-dot"></i> Endereço</h3>
+                <p>Rua da Academia, 123 - São Paulo/SP</p>
+            </div>
+            <div class="footer-info">
+                <h3><i class="fa-solid fa-clock"></i> Horário</h3>
+                <p>Seg a Sex: 6h às 23h<br>Sáb: 8h às 18h</p>
+            </div>
+              <div class="footer-info">
+                <h3><i class="fa-solid fa-phone"></i> Telefone</h3>
+                <p>(11) 999999999</p>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="slideshow.js"></script>
+    <script>
+        // Modal e Countdown
+        document.getElementById('modal-form').style.display = 'none';
+        
+        // Simulação de countdown
+        const countdown = document.getElementById('countdown');
+        let days = 5;
+        setInterval(() => {
+            days = days > 0 ? days - 1 : 0;
+            countdown.textContent = `${days}/06`;
+        }, 86400000);
+    </script>
+</body>
+</html>
