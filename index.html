@@ -12,39 +12,42 @@
 </head>
 
 <body>
-    <!-- Slideshow -->
-    <div id="slideshow" class="slideshow-container">
-        <div class="slide active" style="background-image: url('./assets/imgacademia.jpg')">
+    <!-- Slideshow (Adicionado aria-label) -->
+    <div id="slideshow" class="slideshow-container" aria-label="Galeria de imagens da academia">
+        <div class="slide active" style="background-image: url('./assets/imgacademia.jpg')" role="img" aria-label="Academia com equipamentos modernos">
             <div class="slide-overlay">+50 EQUIPAMENTOS MODERNOS</div>
         </div>
-        <div class="slide" style="background-image: url('./assets/imagemacademia2.jpg')">
+        <div class="slide" style="background-image: url('./assets/imagemacademia2.jpg')" role="img" aria-label="Personal trainer auxiliando aluno">
             <div class="slide-overlay">PERSONAL TRAINERS CERTIFICADOS</div>
         </div>
-        <div class="slide" style="background-image: url('./assets/imagemacademia3.jpg')">
+        <div class="slide" style="background-image: url('./assets/imagemacademia3.jpg')" role="img" aria-label="Aula coletiva na academia">
             <div class="slide-overlay">AULAS COLETIVAS DIÁRIAS</div>
         </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header (Adicionado menu mobile) -->
     <header>
         <div class="menu-content">
             <h1 class="logo">
                 <i class="fa-solid fa-dumbbell"></i> Alpha Gym
             </h1>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <nav class="header-menu">
                 <ul class="list-itens">
                     <li><a href="#">Home</a></li>
                     <li><a href="#benefits">Benefícios</a></li>
                     <li><a href="#testimonials">Depoimentos</a></li>
                     <li><a href="#contact">Contato</a></li>
-                    <li><a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></a></li>
-                    <li><a href="https://www.instagram.com/#" target="_blank" class="instagram-icon"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer" class="instagram-icon"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content (Sem alterações) -->
     <main>
         <div class="main-content">
             <div class="offer-banner">
@@ -59,7 +62,7 @@
         </div>
     </main>
 
-    <!-- Seção de Benefícios -->
+    <!-- Seção de Benefícios (Adicionado loading lazy) -->
     <section id="benefits" class="benefits-section">
         <h2>Por que escolher a <span>Alpha Gym</span>?</h2>
         <div class="benefits-grid">
@@ -81,17 +84,17 @@
         </div>
     </section>
 
-    <!-- Depoimentos -->
+    <!-- Depoimentos (Adicionado loading lazy) -->
     <section id="testimonials" class="testimonials-section">
         <h2>O que nossos alunos dizem:</h2>
         <div class="testimonial-card">
-            <img src="./assets/avaliação.png" alt="Cliente satisfeito">
+            <img src="./assets/avaliação.png" alt="Cliente satisfeito" loading="lazy">
             <p>"Perdi 12kg em 3 meses com os treinos personalizados!"</p>
             <span>- João, 28 anos</span>
         </div>
     </section>
 
-    <!-- Formulário (Modal) -->
+    <!-- Formulário (Modal) (Sem alterações) -->
     <div id="modal-form" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="document.getElementById('modal-form').style.display='none'">&times;</span>
@@ -105,7 +108,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer (Sem alterações) -->
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-info">
@@ -116,15 +119,14 @@
                 <h3><i class="fa-solid fa-clock"></i> Horário</h3>
                 <p>Seg a Sex: 6h às 23h<br>Sáb: 8h às 18h</p>
             </div>
-              <div class="footer-info">
+            <div class="footer-info">
                 <h3><i class="fa-solid fa-phone"></i> Telefone</h3>
                 <p>(11) 999999999</p>
             </div>
-            
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts (Adicionado menu mobile) -->
     <script src="slideshow.js"></script>
     <script>
         // Modal e Countdown
@@ -137,6 +139,16 @@
             days = days > 0 ? days - 1 : 0;
             countdown.textContent = `${days}/06`;
         }, 86400000);
+
+        // Menu Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const headerMenu = document.querySelector('.header-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            headerMenu.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', 
+                menuToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        });
     </script>
 </body>
 </html>

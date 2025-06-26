@@ -1,4 +1,4 @@
-/* ===== RESET & GLOBAL ===== */
+/* ===== RESET & CONFIGURAÇÕES GLOBAIS ===== */
 * {
     margin: 0;
     padding: 0;
@@ -57,7 +57,7 @@ body::after {
     bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5);
     animation: fadeIn 2s ease;
@@ -71,11 +71,11 @@ body::after {
     to { opacity: 1; }
 }
 
-/* ===== HEADER ===== */
+/* ===== CABEÇALHO ===== */
 header {
     width: 100%;
     height: 7vh;
-    min-height: 50px; /* Minimum height for mobile */
+    min-height: 50px;
     background: rgba(22, 22, 22, 0.2);
     backdrop-filter: blur(5px);
     position: fixed;
@@ -89,14 +89,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 clamp(1rem, 5vw, 5rem); /* Responsive padding */
+    padding: 0 clamp(1rem, 5vw, 5rem);
     font-size: 1.8rem;
     max-width: 1600px;
     margin: 0 auto;
 }
 
 .logo {
-    font-size: clamp(1.6rem, 3vw, 2rem); /* Responsive font size */
+    font-size: clamp(1.6rem, 3vw, 2rem);
     letter-spacing: 0.3rem;
     display: flex;
     align-items: center;
@@ -107,7 +107,7 @@ header {
 .header-menu .list-itens {
     display: flex;
     list-style: none;
-    gap: clamp(1rem, 3vw, 3rem); /* Responsive gap */
+    gap: clamp(1rem, 3vw, 3rem);
 }
 
 .header-menu .list-itens a {
@@ -116,10 +116,10 @@ header {
     font-weight: 700;
     position: relative;
     transition: all 0.3s ease;
-    font-size: clamp(1.4rem, 2vw, 1.8rem); /* Responsive font size */
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
 }
 
-/* Efeito hover menu */
+/* Efeito hover do menu */
 .header-menu .list-itens li:not(:has(.fa-brands)) a::before {
     content: '';
     position: absolute;
@@ -135,21 +135,24 @@ header {
     width: 100%;
 }
 
-/* Mobile menu toggle */
+/* Botão do menu mobile */
 .menu-toggle {
     display: none;
     cursor: pointer;
     font-size: 2.2rem;
+    background: none;
+    border: none;
+    color: white;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== CONTEÚDO PRINCIPAL ===== */
 main {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 7vh 1rem 2rem; /* Account for header height */
+    padding: 7vh 1rem 2rem;
 }
 
 .main-content {
@@ -163,13 +166,10 @@ main {
     padding: 1rem 2rem;
     border-radius: 50px;
     margin-bottom: 3rem;
-    font-size: clamp(1.2rem, 2vw, 1.6rem); /* Responsive font size */
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     animation: pulse 2s infinite;
     display: inline-block;
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 @keyframes pulse {
@@ -179,7 +179,7 @@ main {
 }
 
 .primary-text {
-    font-size: clamp(2.8rem, 8vw, 5rem); /* Responsive font size */
+    font-size: clamp(2.8rem, 8vw, 5rem);
     margin-bottom: 2rem;
     line-height: 1.2;
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
@@ -190,8 +190,8 @@ main {
 }
 
 .second-text {
-    font-size: clamp(1.4rem, 3vw, 2rem); /* Responsive font size */
-    margin-bottom: clamp(3rem, 5vw, 5rem); /* Responsive margin */
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: clamp(3rem, 5vw, 5rem);
     color: rgb(200, 200, 200);
     text-transform: uppercase;
     letter-spacing: 0.3rem;
@@ -206,8 +206,8 @@ main {
 }
 
 .btns button {
-    width: clamp(200px, 40vw, 250px); /* Responsive width */
-    height: clamp(50px, 10vw, 60px); /* Responsive height */
+    width: clamp(200px, 40vw, 250px);
+    height: clamp(50px, 10vw, 60px);
     cursor: pointer;
     border: 1px solid white;
     color: white;
@@ -218,7 +218,7 @@ main {
     border-radius: 20px;
     position: relative;
     transition: all 0.5s ease;
-    font-size: clamp(1.2rem, 2vw, 1.4rem); /* Responsive font size */
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
     overflow: hidden;
 }
 
@@ -245,7 +245,7 @@ main {
 
 /* ===== SEÇÕES ===== */
 section {
-    padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 5%, 5%); /* Responsive padding */
+    padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 5%, 5%);
     position: relative;
 }
 
@@ -255,8 +255,8 @@ section {
 }
 
 .benefits-section h2 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
-    margin-bottom: clamp(3rem, 5vw, 5rem); /* Responsive margin */
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: clamp(3rem, 5vw, 5rem);
 }
 
 .benefits-section h2 span {
@@ -273,7 +273,7 @@ section {
 
 .benefit-item {
     background: rgba(30, 30, 30, 0.8);
-    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem); /* Responsive padding */
+    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem);
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
@@ -283,18 +283,18 @@ section {
 }
 
 .benefit-item i {
-    font-size: clamp(3rem, 6vw, 4rem); /* Responsive icon size */
+    font-size: clamp(3rem, 6vw, 4rem);
     color: rgb(251, 255, 0);
-    margin-bottom: clamp(1rem, 2vw, 2rem); /* Responsive margin */
+    margin-bottom: clamp(1rem, 2vw, 2rem);
 }
 
 .benefit-item h3 {
-    font-size: clamp(1.6rem, 3vw, 2rem); /* Responsive font size */
+    font-size: clamp(1.6rem, 3vw, 2rem);
     margin-bottom: 1rem;
 }
 
 .benefit-item p {
-    font-size: clamp(1.4rem, 2vw, 1.6rem); /* Responsive font size */
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
     color: #ccc;
 }
 
@@ -305,35 +305,35 @@ section {
 }
 
 .testimonials-section h2 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
-    margin-bottom: clamp(3rem, 5vw, 5rem); /* Responsive margin */
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: clamp(3rem, 5vw, 5rem);
 }
 
 .testimonial-card {
     max-width: 600px;
     margin: 0 auto;
     background: rgba(40, 40, 40, 0.8);
-    padding: clamp(2rem, 3vw, 3rem); /* Responsive padding */
+    padding: clamp(2rem, 3vw, 3rem);
     border-radius: 10px;
 }
 
 .testimonial-card img {
-    width: clamp(80px, 15vw, 100px); /* Responsive image size */
-    height: clamp(80px, 15vw, 100px); /* Responsive image size */
+    width: clamp(80px, 15vw, 100px);
+    height: clamp(80px, 15vw, 100px);
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: clamp(1rem, 2vw, 2rem); /* Responsive margin */
+    margin-bottom: clamp(1rem, 2vw, 2rem);
     border: 3px solid rgb(251, 255, 0);
 }
 
 .testimonial-card p {
-    font-size: clamp(1.4rem, 3vw, 1.8rem); /* Responsive font size */
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
     font-style: italic;
     margin-bottom: 1rem;
 }
 
 .testimonial-card span {
-    font-size: clamp(1.2rem, 2vw, 1.6rem); /* Responsive font size */
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     color: #aaa;
 }
 
@@ -354,7 +354,7 @@ section {
 
 .modal-content {
     background: #111;
-    padding: clamp(2rem, 3vw, 3rem); /* Responsive padding */
+    padding: clamp(2rem, 3vw, 3rem);
     border-radius: 10px;
     max-width: 500px;
     width: 100%;
@@ -365,27 +365,27 @@ section {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
-    font-size: clamp(2rem, 3vw, 2.5rem); /* Responsive font size */
+    font-size: clamp(2rem, 3vw, 2.5rem);
     cursor: pointer;
 }
 
 .modal h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive font size */
-    margin-bottom: clamp(1.5rem, 3vw, 2rem); /* Responsive margin */
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
     text-align: center;
 }
 
 .modal form {
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 2vw, 1.5rem); /* Responsive gap */
+    gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .modal input {
-    padding: clamp(1rem, 2vw, 1.5rem); /* Responsive padding */
+    padding: clamp(1rem, 2vw, 1.5rem);
     border: none;
     border-radius: 5px;
-    font-size: clamp(1.4rem, 2vw, 1.6rem); /* Responsive font size */
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
     background: #222;
     color: white;
 }
@@ -394,11 +394,11 @@ section {
     background: rgb(251, 255, 0);
     color: #111;
     border: none;
-    padding: clamp(1rem, 2vw, 1.5rem); /* Responsive padding */
+    padding: clamp(1rem, 2vw, 1.5rem);
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: clamp(1.4rem, 2vw, 1.6rem); /* Responsive font size */
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
 }
 
 .modal button[type="submit"]:hover {
@@ -406,10 +406,10 @@ section {
     transform: translateY(-3px);
 }
 
-/* ===== FOOTER ===== */
+/* ===== RODAPÉ ===== */
 footer {
     background: #000;
-    padding: clamp(3rem, 5vw, 5rem) 0; /* Responsive padding */
+    padding: clamp(3rem, 5vw, 5rem) 0;
     text-align: center;
 }
 
@@ -419,12 +419,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
-    padding: 0 clamp(1rem, 3vw, 2rem); /* Responsive padding */
+    padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
 .footer-info h3 {
-    font-size: clamp(1.6rem, 3vw, 2rem); /* Responsive font size */
-    margin-bottom: clamp(1rem, 2vw, 1.5rem); /* Responsive margin */
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -432,7 +432,7 @@ footer {
 }
 
 .footer-info p {
-    font-size: clamp(1.2rem, 2vw, 1.6rem); /* Responsive font size */
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     color: #aaa;
     line-height: 1.6;
 }
@@ -440,14 +440,14 @@ footer {
 .footer-social {
     display: flex;
     justify-content: center;
-    gap: clamp(1rem, 3vw, 2rem); /* Responsive gap */
+    gap: clamp(1rem, 3vw, 2rem);
 }
 
 .footer-social a {
-    font-size: clamp(2rem, 3vw, 2.5rem); /* Responsive icon size */
+    font-size: clamp(2rem, 3vw, 2.5rem);
 }
 
-/* ===== RESPONSIVIDADE AVANÇADA ===== */
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -515,7 +515,7 @@ footer {
     }
 }
 
-/* Orientation adjustments */
+/* Ajustes para modo paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
     .main-content {
         padding-top: 10vh;
@@ -533,4 +533,20 @@ footer {
     .btns button {
         height: 40px;
     }
+}
+
+/* Garante que os ícones sociais apareçam */
+.whatsapp-icon i, 
+.instagram-icon i {
+    font-size: 2.2rem;
+    display: inline-block !important;
+}
+
+/* Melhora a área de toque para mobile */
+button, a[class*="icon"] {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
