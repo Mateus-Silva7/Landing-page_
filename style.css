@@ -14,6 +14,7 @@ body {
     font-family: 'Lato', sans-serif;
     color: white;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 body::after {
@@ -56,10 +57,13 @@ body::after {
     bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
     font-weight: 700;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5);
     animation: fadeIn 2s ease;
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
 }
 
 @keyframes fadeIn {
@@ -71,11 +75,13 @@ body::after {
 header {
     width: 100%;
     height: 7vh;
+    min-height: 50px; /* Minimum height for mobile */
     background: rgba(22, 22, 22, 0.2);
     backdrop-filter: blur(5px);
     position: fixed;
     top: 0;
     z-index: 100;
+    padding: 0 1rem;
 }
 
 .menu-content {
@@ -83,22 +89,25 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5rem;
+    padding: 0 clamp(1rem, 5vw, 5rem); /* Responsive padding */
     font-size: 1.8rem;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 3vw, 2rem); /* Responsive font size */
     letter-spacing: 0.3rem;
     display: flex;
     align-items: center;
     gap: 1rem;
+    white-space: nowrap;
 }
 
 .header-menu .list-itens {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: clamp(1rem, 3vw, 3rem); /* Responsive gap */
 }
 
 .header-menu .list-itens a {
@@ -107,6 +116,7 @@ header {
     font-weight: 700;
     position: relative;
     transition: all 0.3s ease;
+    font-size: clamp(1.4rem, 2vw, 1.8rem); /* Responsive font size */
 }
 
 /* Efeito hover menu */
@@ -125,17 +135,27 @@ header {
     width: 100%;
 }
 
+/* Mobile menu toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2.2rem;
+}
+
 /* ===== MAIN CONTENT ===== */
 main {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 7vh 1rem 2rem; /* Account for header height */
 }
 
 .main-content {
     max-width: 90%;
+    width: 100%;
+    padding: 2rem;
 }
 
 .offer-banner {
@@ -143,8 +163,13 @@ main {
     padding: 1rem 2rem;
     border-radius: 50px;
     margin-bottom: 3rem;
-    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 2vw, 1.6rem); /* Responsive font size */
     animation: pulse 2s infinite;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @keyframes pulse {
@@ -154,7 +179,7 @@ main {
 }
 
 .primary-text {
-    font-size: 5rem;
+    font-size: clamp(2.8rem, 8vw, 5rem); /* Responsive font size */
     margin-bottom: 2rem;
     line-height: 1.2;
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
@@ -165,8 +190,8 @@ main {
 }
 
 .second-text {
-    font-size: 2rem;
-    margin-bottom: 5rem;
+    font-size: clamp(1.4rem, 3vw, 2rem); /* Responsive font size */
+    margin-bottom: clamp(3rem, 5vw, 5rem); /* Responsive margin */
     color: rgb(200, 200, 200);
     text-transform: uppercase;
     letter-spacing: 0.3rem;
@@ -181,8 +206,8 @@ main {
 }
 
 .btns button {
-    width: 250px;
-    height: 60px;
+    width: clamp(200px, 40vw, 250px); /* Responsive width */
+    height: clamp(50px, 10vw, 60px); /* Responsive height */
     cursor: pointer;
     border: 1px solid white;
     color: white;
@@ -193,7 +218,7 @@ main {
     border-radius: 20px;
     position: relative;
     transition: all 0.5s ease;
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 2vw, 1.4rem); /* Responsive font size */
     overflow: hidden;
 }
 
@@ -220,7 +245,7 @@ main {
 
 /* ===== SEÇÕES ===== */
 section {
-    padding: 8rem 5%;
+    padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 5%, 5%); /* Responsive padding */
     position: relative;
 }
 
@@ -230,8 +255,8 @@ section {
 }
 
 .benefits-section h2 {
-    font-size: 3.5rem;
-    margin-bottom: 5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
+    margin-bottom: clamp(3rem, 5vw, 5rem); /* Responsive margin */
 }
 
 .benefits-section h2 span {
@@ -248,7 +273,7 @@ section {
 
 .benefit-item {
     background: rgba(30, 30, 30, 0.8);
-    padding: 3rem 2rem;
+    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem); /* Responsive padding */
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
@@ -258,18 +283,18 @@ section {
 }
 
 .benefit-item i {
-    font-size: 4rem;
+    font-size: clamp(3rem, 6vw, 4rem); /* Responsive icon size */
     color: rgb(251, 255, 0);
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1rem, 2vw, 2rem); /* Responsive margin */
 }
 
 .benefit-item h3 {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 3vw, 2rem); /* Responsive font size */
     margin-bottom: 1rem;
 }
 
 .benefit-item p {
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 2vw, 1.6rem); /* Responsive font size */
     color: #ccc;
 }
 
@@ -280,35 +305,35 @@ section {
 }
 
 .testimonials-section h2 {
-    font-size: 3.5rem;
-    margin-bottom: 5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
+    margin-bottom: clamp(3rem, 5vw, 5rem); /* Responsive margin */
 }
 
 .testimonial-card {
     max-width: 600px;
     margin: 0 auto;
     background: rgba(40, 40, 40, 0.8);
-    padding: 3rem;
+    padding: clamp(2rem, 3vw, 3rem); /* Responsive padding */
     border-radius: 10px;
 }
 
 .testimonial-card img {
-    width: 100px;
-    height: 100px;
+    width: clamp(80px, 15vw, 100px); /* Responsive image size */
+    height: clamp(80px, 15vw, 100px); /* Responsive image size */
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1rem, 2vw, 2rem); /* Responsive margin */
     border: 3px solid rgb(251, 255, 0);
 }
 
 .testimonial-card p {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem); /* Responsive font size */
     font-style: italic;
     margin-bottom: 1rem;
 }
 
 .testimonial-card span {
-    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 2vw, 1.6rem); /* Responsive font size */
     color: #aaa;
 }
 
@@ -324,14 +349,15 @@ section {
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .modal-content {
     background: #111;
-    padding: 3rem;
+    padding: clamp(2rem, 3vw, 3rem); /* Responsive padding */
     border-radius: 10px;
     max-width: 500px;
-    width: 90%;
+    width: 100%;
     position: relative;
 }
 
@@ -339,27 +365,27 @@ section {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3vw, 2.5rem); /* Responsive font size */
     cursor: pointer;
 }
 
 .modal h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive font size */
+    margin-bottom: clamp(1.5rem, 3vw, 2rem); /* Responsive margin */
     text-align: center;
 }
 
 .modal form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: clamp(1rem, 2vw, 1.5rem); /* Responsive gap */
 }
 
 .modal input {
-    padding: 1.5rem;
+    padding: clamp(1rem, 2vw, 1.5rem); /* Responsive padding */
     border: none;
     border-radius: 5px;
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 2vw, 1.6rem); /* Responsive font size */
     background: #222;
     color: white;
 }
@@ -368,10 +394,11 @@ section {
     background: rgb(251, 255, 0);
     color: #111;
     border: none;
-    padding: 1.5rem;
+    padding: clamp(1rem, 2vw, 1.5rem); /* Responsive padding */
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: clamp(1.4rem, 2vw, 1.6rem); /* Responsive font size */
 }
 
 .modal button[type="submit"]:hover {
@@ -382,7 +409,7 @@ section {
 /* ===== FOOTER ===== */
 footer {
     background: #000;
-    padding: 5rem 0;
+    padding: clamp(3rem, 5vw, 5rem) 0; /* Responsive padding */
     text-align: center;
 }
 
@@ -392,12 +419,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
-    padding: 0 2rem;
+    padding: 0 clamp(1rem, 3vw, 2rem); /* Responsive padding */
 }
 
 .footer-info h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.6rem, 3vw, 2rem); /* Responsive font size */
+    margin-bottom: clamp(1rem, 2vw, 1.5rem); /* Responsive margin */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -405,7 +432,7 @@ footer {
 }
 
 .footer-info p {
-    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 2vw, 1.6rem); /* Responsive font size */
     color: #aaa;
     line-height: 1.6;
 }
@@ -413,57 +440,97 @@ footer {
 .footer-social {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: clamp(1rem, 3vw, 2rem); /* Responsive gap */
 }
 
 .footer-social a {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3vw, 2.5rem); /* Responsive icon size */
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ===== RESPONSIVIDADE AVANÇADA ===== */
 @media (max-width: 768px) {
-    .menu-content {
-        padding: 0 2rem;
+    .menu-toggle {
+        display: block;
     }
-
+    
+    .header-menu {
+        position: fixed;
+        top: 7vh;
+        left: -100%;
+        width: 80%;
+        height: 93vh;
+        background: rgba(22, 22, 22, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.3s ease;
+        z-index: 99;
+    }
+    
+    .header-menu.active {
+        left: 0;
+    }
+    
     .header-menu .list-itens {
-        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
     }
-
-    .primary-text {
-        font-size: 3.5rem;
+    
+    .btns {
+        flex-direction: column;
+        align-items: center;
     }
-
-    .second-text {
-        font-size: 1.6rem;
-    }
-
+    
     .btns button {
-        width: 200px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-
-    .benefit-item {
-        padding: 2rem;
+        width: 100%;
+        max-width: 250px;
     }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 1.6rem;
+    .menu-content {
+        padding: 0 1rem;
     }
-
-    .header-menu .list-itens li:not(:last-child) {
-        display: none;
+    
+    .slide-overlay {
+        bottom: 15%;
     }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .offer-banner {
+        white-space: normal;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
 
+/* Orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-content {
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+    
     .primary-text {
-        font-size: 2.8rem;
+        font-size: clamp(2rem, 6vh, 3rem);
     }
-
-    .btns {
-        flex-direction: column;
-        align-items: center;
+    
+    .second-text {
+        margin-bottom: 3rem;
+    }
+    
+    .btns button {
+        height: 40px;
     }
 }
